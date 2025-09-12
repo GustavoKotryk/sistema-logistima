@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: mysql/mysql-server:latest
+    container_name: logistica
+    restart: always
+    environment:
+      - MYSQL_DATABASE=logistica
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql-volume:/var/lib/sistema-logistica/docker
+volumes:
+  mysql-volume:
+    driver: local
