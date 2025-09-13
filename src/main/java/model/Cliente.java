@@ -8,7 +8,16 @@ public class Cliente {
     protected String cidade;
     protected String estado;
 
-    public Cliente(int id, String nome, String cpf, String endereco, String cidade, String estado) {
+    public Cliente (int id, String nome, String cpf, String endereco, String cidade, String estado) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
+    public Cliente () {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -42,7 +51,7 @@ public class Cliente {
     }
 
 
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
