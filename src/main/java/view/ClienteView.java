@@ -67,4 +67,57 @@ public class ClienteView {
         Cliente cliente = new Cliente(0, nome, cpf, endereco, cidade, estado);
         clienteDAO.adicionar(cliente);
     }
+
+    private void listarClientes() throws SQLException {
+        List<Cliente> clientes = clienteDAO.listar();
+        for (Cliente cliente : clientes) {
+            System.out.println(cliente);
+        }
+        System.out.println("Fim da lista de clientes.");
+    }
+
+    private void buscarClientePorId() throws SQLException {
+        System.out.print("Digite o ID do cliente: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        Cliente cliente = clienteDAO.buscarPorId(id);
+        if (cliente != null) {
+            System.out.println(cliente);
+        }
+    }
+
+    private void editarCliente() throws SQLException {
+        System.out.print("Digite o ID do cliente: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        Cliente cliente = clienteDAO.buscarPorId(id);
+        if (cliente != null) {
+            System.out.print("Nome: ");
+            String nome = sc.nextLine();
+            System.out.print("CPF: ");
+            String cpf = sc.nextLine();
+            String endereco = sc.nextLine();
+            String cidade = sc.nextLine();
+            String estado = sc.nextLine();
+
+            cliente.setNome(nome);
+            cliente.setCpf(cpf);
+            cliente.setEndereco(endereco);
+            cliente.setCidade(cidade);
+            cliente.setEstado(estado);
+
+            clienteDAO.editar(cliente);
+            System.out.println("Cliente editado com sucesso!");
+        }
+    }
+
+    private void removerCliente() throws SQLException{
+        System.out.print("Digite o ID do cliente: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        Cliente cliente = clienteDAO.buscarPorId(id);
+        if (cliente != null){
+            removerCliente();
+        }
+    }
 }
