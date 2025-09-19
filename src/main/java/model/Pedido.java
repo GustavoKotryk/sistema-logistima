@@ -1,19 +1,16 @@
 package model;
 
-import java.time.LocalDateTime;
-import model.StatusPedido;
-
+import java.sql.Date;
 
 public class Pedido {
     private int id;
     private int clienteId;
-    private LocalDateTime dataPedido;
+    private Date dataPedido;
     private double volumeM3;
     private double pesoKg;
-    private StatusPedido status;
+    private String status;
 
-    public Pedido(int id, int clienteId, LocalDateTime dataPedido,
-                  double volumeM3, double pesoKg, StatusPedido status) {
+    public Pedido(int id, int clienteId, Date dataPedido, double volumeM3, double pesoKg, String status) {
         this.id = id;
         this.clienteId = clienteId;
         this.dataPedido = dataPedido;
@@ -22,53 +19,63 @@ public class Pedido {
         this.status = status;
     }
 
-
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getClienteId() {
         return clienteId;
     }
 
-    public LocalDateTime getDataPedido() {
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public Date getDataPedido() {
         return dataPedido;
+    }
+
+    public void setDataPedido(Date dataPedido) {
+        this.dataPedido = dataPedido;
     }
 
     public double getVolumeM3() {
         return volumeM3;
     }
 
-    public double getPesoKg() {
-        return pesoKg;
-    }
-
-    public StatusPedido getStatus() {
-        return status;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setClienteId(int clienteId) {
-        this.clienteId = clienteId;
-    }
-
-    public void setDataPedido(LocalDateTime dataPedido) {
-        this.dataPedido = dataPedido;
-    }
-
     public void setVolumeM3(double volumeM3) {
         this.volumeM3 = volumeM3;
+    }
+
+    public double getPesoKg() {
+        return pesoKg;
     }
 
     public void setPesoKg(double pesoKg) {
         this.pesoKg = pesoKg;
     }
 
-    public void setStatus(StatusPedido status) {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido {" +
+                "id=" + id +
+                ", clienteId=" + clienteId +
+                ", dataPedido=" + dataPedido +
+                ", volumeM3=" + volumeM3 +
+                ", pesoKg=" + pesoKg +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

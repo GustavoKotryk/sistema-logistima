@@ -60,7 +60,7 @@ public class ClienteView {
         String endereco = sc.nextLine();
         System.out.print("Cidade: ");
         String cidade = sc.nextLine();
-        System.out.print("Estado: ");
+        System.out.print("Estado (Sigla): ");
         String estado = sc.nextLine();
 
 

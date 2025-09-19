@@ -1,4 +1,5 @@
 import view.ClienteView;
+import view.PedidoView;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -29,8 +30,8 @@ public class Main {
                     System.out.println("🚧 Em desenvolvimento...");
                 }
                 case 3 -> {
-                    // futuramente: PedidoView
-                    System.out.println("🚧 Em desenvolvimento...");
+                    PedidoView pedidoView = new PedidoView();
+                    pedidoView.menu();
                 }
                 case 4 -> {
                     // futuramente: EntregaView

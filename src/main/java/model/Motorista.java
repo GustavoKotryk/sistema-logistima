@@ -15,6 +15,9 @@ public class Motorista {
         this.cidade_base = cidade_base;
     }
 
+    public Motorista() { }
+
+
     public int getId_motorista() {return id_motorista = id_motorista;}
     public String getNome() {return nome = nome;}
     public String getCnh() {return cnh = cnh;}
