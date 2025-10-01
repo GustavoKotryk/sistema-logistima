@@ -8,5 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EntregaDAO {
-    public void adicionar(Entrega entrega) throws SQLException {}
+    public void adicionar(Entrega entrega) throws SQLException {
+
+    }
 }

@@ -23,10 +23,9 @@ public class Main {
             switch (opcao) {
                 case 1 -> {
                     ClienteView clienteView = new ClienteView();
-                    clienteView.menu(); // chama o menu de clientes
+                    clienteView.menu();
                 }
                 case 2 -> {
-                    // futuramente: MotoristaView
                     System.out.println("🚧 Em desenvolvimento...");
                 }
                 case 3 -> {
@@ -34,11 +33,10 @@ public class Main {
                     pedidoView.menu();
                 }
                 case 4 -> {
-                    // futuramente: EntregaView
-                    System.out.println("🚧 Em desenvolvimento...");
+                    System.out.println("Em desenvolvimento...");
                 }
-                case 0 -> System.out.println("👋 Saindo...");
-                default -> System.out.println("⚠️ Opção inválida!");
+                case 0 -> System.out.println("Saindo...");
+                default -> System.out.println("⚠Opção inválida!");
             }
         } while (opcao != 0);
 
